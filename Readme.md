@@ -31,6 +31,7 @@ JWT_EXPIRES_IN=your_jwt_expiry
 **Note:** Make sure to keep your `.env` file secure and never commit it to version control.
 
 To generate secure tokens, use the following command:
+
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
@@ -38,6 +39,7 @@ node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ### Running the Project
 
 Start the development server:
+
 ```bash
 npm start
 ```
@@ -52,6 +54,7 @@ npm start
 ### Dependencies
 
 The project uses the following dependencies:
+
 - `express`: Web framework for Node.js
 - `mongoose`: MongoDB ODM
 - `jsonwebtoken`: JWT token handling
@@ -63,4 +66,3 @@ The project uses the following dependencies:
 ### License
 
 This project is licensed under the ISC License.
-

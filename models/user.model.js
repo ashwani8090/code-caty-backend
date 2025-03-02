@@ -17,8 +17,8 @@ const userSchema = mongoose.Schema(
       required: true,
     },
     refreshToken: {
-      type: String
-    }
+      type: String,
+    },
   },
   {
     timestamps: true,
@@ -26,21 +26,20 @@ const userSchema = mongoose.Schema(
 );
 
 userSchema.statics.isEmailTaken = async function (email) {
-    const user = await this.findOne({ email: email });
-    return !!user;
-}
+  const user = await this.findOne({ email: email });
+  return !!user;
+};
 
 userSchema.methods.comparePassword = async function (password) {
-    return await bycrypt.compare(password, this.password);
-}
+  return await bycrypt.compare(password, this.password);
+};
 
 userSchema.pre("save", async function (next) {
-    if (this.isModified("password")) {
-        this.password = await bycrypt.hash(this.password, 8);
-        }
-    next();
-})
-
+  if (this.isModified("password")) {
+    this.password = await bycrypt.hash(this.password, 8);
+  }
+  next();
+});
 
 const User = mongoose.model("User", userSchema);
 

@@ -19,7 +19,7 @@ const validateToken = (req, res, next) => {
     res.status(400).send({
       errors: {
         token: "Invalid token",
-        error: error
+        error: error,
       },
     });
   }
