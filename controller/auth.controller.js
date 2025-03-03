@@ -47,7 +47,7 @@ const refreshToken = catchAsync(async (req, res, next) => {
 
 const verifyEmail = catchAsync(async (req, res, next) => {
   const { token } = req.params;
-  const tokenDetails = await verifyToken(token);
+  const tokenDetails = await verifyToken(token, process.env.EMAIL_TOKEN);
   const user = await User.findById(tokenDetails.id);
   if (user.isVerified) {
     return res.status(200).send({

@@ -13,12 +13,12 @@ const generateAccesAndRefreshToken = (user) => {
 };
 
 const generateVerifyEmailToken = async (user) => {
-  const verifyEmailToken = generateToken(user, process.env.JWT_TOKEN);
+  const verifyEmailToken = generateToken(user, process.env.EMAIL_TOKEN);
   return verifyEmailToken;
 };
 
-const verifyToken = async (token) => {
-  await jwt.verify(token, process.env.JWT_TOKEN);
+const verifyToken = async (token, secret) => {
+  await jwt.verify(token, secret);
   return jwt.decode(token);
 };
 
