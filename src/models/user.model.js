@@ -22,6 +22,9 @@ const userSchema = mongoose.Schema(
     isVerified: {
       type: Boolean,
     },
+    image:{
+      type:String
+    }
   },
   {
     timestamps: true,

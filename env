@@ -1,0 +1,12 @@
+JWT_TOKEN=your_jwt_token_here
+JWT_REFRESH_TOKEN=your_jwt_refresh_token_here
+MONGO_URI=mongodb://localhost:27017/your_database
+JWT_EXPIRES_IN=1d
+SMTP_PASSWORD=your_smtp_password_here
+SMTP_EMAIL=your_email_here
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+EMAIL_VERIFICATION_URL=http://localhost:3000/auth/verify-email/
+PORT=3000
+BASE_URL=http://localhost:3000/
+EMAIL_TOKEN=your_email_token_here
