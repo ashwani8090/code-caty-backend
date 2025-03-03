@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const port = 3000;
-const connectDB = require("./utilities/connectDb");
+const connectDB = require("./utilities/connectDB");
 const errorHandler = require("./middleware/errorHandler");
 require("dotenv").config();
 const cors = require("cors");

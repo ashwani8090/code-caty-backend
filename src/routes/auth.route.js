@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { register, login } = require("../validators/auth.validators");
 const validateBody = require("../middleware/validateBody");
-const User = require("../models/user.model");
 const {
   registerUser,
   loginUser,
