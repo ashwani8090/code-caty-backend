@@ -12,4 +12,18 @@ const generateAccesAndRefreshToken = (user) => {
   return { accessToken, refreshToken };
 };
 
-module.exports = { generateAccesAndRefreshToken };
+const generateVerifyEmailToken = async (user) => {
+  const verifyEmailToken = generateToken(user, process.env.JWT_TOKEN);
+  return verifyEmailToken;
+};
+
+const verifyToken = async (token) => {
+  await jwt.verify(token, process.env.JWT_TOKEN);
+  return jwt.decode(token);
+};
+
+module.exports = {
+  generateAccesAndRefreshToken,
+  generateVerifyEmailToken,
+  verifyToken,
+};
