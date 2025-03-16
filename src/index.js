@@ -4,11 +4,11 @@ const routes = require("./routes");
 const port = 3000;
 const connectDB = require("./utilities/connectDB");
 const errorHandler = require("./middleware/errorHandler");
-require("dotenv").config();
+const {config} = require("dotenv")
 const cors = require("cors");
 
+config();
 connectDB();
-
 app.use(express.static('public'))
 app.use(cors());
 app.use(express.json());
